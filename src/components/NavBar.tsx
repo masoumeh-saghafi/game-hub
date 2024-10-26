@@ -1,16 +1,16 @@
-import { HStack, Image, Text } from '@chakra-ui/react'
+import { HStack, Image } from '@chakra-ui/react'
 import logo from '../assets/logo.webp'
 import ColorModeSwich from './ColorModeSwich'
 import SearchInput from './SearchInput'
-interface Props {
-  onSearch: (sreachText: string) => void
-}
+import { Link } from 'react-router-dom'
 
-const NavBar = ({onSearch}:Props) => {
+const NavBar = () => {
   return (
     <HStack padding='10px'>
-      <Image src={logo} boxSize='60px' />
-      <SearchInput onSearch={onSearch} />
+      <Link to='/'>
+        <Image src={logo} boxSize='60px'  objectFit='cover' />
+      </Link>
+      <SearchInput />
       <ColorModeSwich />
     </HStack>
   )
